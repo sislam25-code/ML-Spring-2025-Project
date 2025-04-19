@@ -46,7 +46,7 @@ pip install pandas numpy seaborn matplotlib plotly scikit-learn xgboost
 | Stage   | Notebook                     | Purpose                                                    |
 | ------- | ---------------------------- | ---------------------------------------------------------- |
 | Stage 1 | `Stage1_EDA.ipynb`           | Filter NY projects, clean data, EDA, and visualization     |
-| Stage 2 | `Stage2_Preprocessing.ipynb` | Feature engineering, encoding, and train/test splits       |
+| Stage 2 | `Stage2_Preprocessing.ipynb` | Feature creation, encoding, and train/test splits          |
 | Stage 3 | `Stage3_Modeling.ipynb`      | Train Decision Tree & XGBoost (5-fold CV), evaluate & rank |
 
 All data files reside in the `Data/` folder.
