@@ -37,6 +37,7 @@ This project is best run in a Jupyter Notebook or Spyder within an Anaconda envi
 
 ```bash
 pip install pandas numpy seaborn matplotlib plotly scikit-learn xgboost
+from sklearn.model_selection import train_test_split
 ```
 
 ---
