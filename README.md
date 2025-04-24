@@ -38,6 +38,17 @@ This project is best run in a Jupyter Notebook or Spyder within an Anaconda envi
 ```bash
 pip install pandas numpy seaborn matplotlib plotly scikit-learn xgboost
 from sklearn.model_selection import train_test_split
+from sklearn.model_selection import StratifiedKFold, cross_val_score
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+from xgboost import XGBClassifier
+from imblearn.pipeline import Pipeline
+from imblearn.over_sampling import SMOTE
+from imblearn.under_sampling import RandomUnderSampler
+from sklearn.model_selection import cross_val_predict
+from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
 ```
 
 ---
@@ -48,7 +59,7 @@ from sklearn.model_selection import train_test_split
 | ------- | ---------------------------- | ---------------------------------------------------------- |
 | Stage 1 | `Stage1_EDA.ipynb`           | Filter NY projects, clean data, EDA, and visualization     |
 | Stage 2 | `Stage2_Preprocessing.ipynb` | Feature creation, encoding, and train/test splits          |
-| Stage 3 | `Stage3_Modeling.ipynb`      | Train Decision Tree & XGBoost (5-fold CV), evaluate & rank |
+| Stage 3 | `Stage3_Modeling.ipynb`      | Train Random Forest Decision Tree & XGBoost (5-fold CV), evaluate & rank |
 
 All data files reside in the `Data/` folder.
 
