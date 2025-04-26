@@ -49,6 +49,11 @@ from imblearn.over_sampling import SMOTE
 from imblearn.under_sampling import RandomUnderSampler
 from sklearn.model_selection import cross_val_predict
 from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
+import pandas as pd
+from scipy.stats import pointbiserialr
+import seaborn as sns
+import numpy as np
+import matplotlib.pyplot as plt
 ```
 
 ---
@@ -65,17 +70,36 @@ All data files reside in the `Data/` folder.
 
 ---
 
-## Results & Findings
+##  Model Results
 
-| Metric (XGBoost)        | Score |
-| ----------------------- | ----- |
-| Recall (unfunded class) |       |
-| Precision               |       |
-| AUPRC                   |       |
+Baseline
+| Sampling Strategy | Model          | Precision (0) | Recall (0) |
+|------------------|---------------|--------------|-----------|
+| SMOTE (Oversampling) | Random Forest | 0.52         | 0.31      |
+| SMOTE (Oversampling) | Decision Tree  | 0.41         | 0.40      |
+| RUS (Undersampling)  | Random Forest | 0.40         | 0.71      |
+| RUS (Undersampling)  | Decision Tree  | 0.36         | 0.66      |
 
--  add findins here 
--
+3-Kfold Cross Validation
+| Sampling Strategy | Model          | Precision (0) | Recall (0) |
+|------------------|---------------|--------------|-----------|
+| SMOTE (Oversampling) | Random Forest | 0.89             |  0.84      |
+| SMOTE (Oversampling) | Decision Tree  | 0.83          | 0.82      |
+| RUS (Undersampling)  | Random Forest |  0.71             | 0.73      |
+| RUS (Undersampling)  | Decision Tree  | 0.67          | 0.68      |
 
+
+- We found that a 3-Kfold Cross Validation model of a random forest classfier using SMOTE oversampling produced the highest precision and recall scores out of all models
+- Unfortunately, running this model took 40+ minutes, so we built a simpler version, which we refer to as a Minimal Random Forest Model, to inform our results for this project
+- The Minimal Random Forest Model trained on only 1% of the data, resampled with SMOTE on only 50% of the minority class to generate fewer additional datapoints, and restricted the number of trees to 10. As such, our precision and recall scores were lower than the previously defined models. In the real world, we would advise anyone running this model to use a machine powerful enough to use the original Kfold random forest model with SMOTE oversampling, rather than the Minimal Random Forest
+
+##  Model Interpretation
+We found that the top 5 features predicting project underfunding are:
+- students_reached_capped with a correlation of 0.28
+- school_zip with a correlation of 0.053
+- price_capped_in with a correlation of 0.8
+- eligible_almost_home_match with a correlation of -.071
+- price_capped_ex with a correlation of 0.8
 ---
 
 ## &#x20;Reproduction Steps
