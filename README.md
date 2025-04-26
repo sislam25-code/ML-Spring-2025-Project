@@ -1,6 +1,6 @@
 #  NY‑DonorsChoose Funding Risk Prediction
 
-> A machine-learning pipeline using decision trees and XGBoost to identify the 10% of **New York State–filtered** DonorsChoose projects least likely to receive full funding—guiding equitable resource allocation in K‑12 education.
+> A machine-learning pipeline using decision trees and random forest modeling to identify the 10% of **New York State–filtered** DonorsChoose projects least likely to receive full funding—guiding equitable resource allocation in K‑12 education.
 
 ---
 
