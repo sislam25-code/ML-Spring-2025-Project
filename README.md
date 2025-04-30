@@ -4,7 +4,7 @@
 
 ---
 
-## Overview --> need to work on this later
+## Overview
 
 Funding disparities across New York public schools leave under-resourced classrooms at a disadvantage. This project analyzes a **New York State subset** of DonorsChoose data to build a binary classification task (`fully_funded` = 0/1) that flags underfunded projects. Specifically, the pipeline:
 
