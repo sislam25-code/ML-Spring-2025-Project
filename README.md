@@ -33,7 +33,7 @@ The `Data/` folder includes:
 
 This project is best run in a Jupyter Notebook or Spyder within an Anaconda environment for smooth package management.
 
-#### Install Required Packages —> add more packages needed
+#### Install Required Packages
 
 ```bash
 pip install pandas numpy seaborn matplotlib plotly scikit-learn xgboost
