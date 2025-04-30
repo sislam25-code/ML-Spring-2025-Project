@@ -8,9 +8,9 @@
 
 Funding disparities across New York public schools leave under-resourced classrooms at a disadvantage. This project analyzes a **New York State subset** of DonorsChoose data to build a binary classification task (`fully_funded` = 0/1) that flags underfunded projects. Specifically, the pipeline:
 
-- Defines a binary classification task on the filtered dataset
-- Trains interpretable tree-based models to predict the top 10% most at-risk proposals
-- Provides ranked insights for targeted policy and donor action
+- Defines a binary classification task for fully_funded on the dataset, filtered for features of interest
+- Trains decision tree and random forst models to predict the top 10% most at-risk proposals
+- Provides ranked insights for targeted policy action for NYS Governor Kathy Hochul
 
 ---
 
